@@ -1,12 +1,12 @@
 <h1>Iniciar Sesion</h1>
-<form action="">
+<form>
 	<div class="form-group">
 		<label>Correo Electronico</label>
 		<input type="email" name="email" class="form-control" [(ngModel)]="formulario.auth.email">
 	</div>
 	<div class="form-group">
 		<label>Contraseña</label>
-		<input type="password" name="password" class="form-control" [(ngModel)]="formulario.auth.email">
+		<input type="password" name="password" class="form-control" [(ngModel)]="formulario.auth.password">
 	</div>
-	<button class="btn btn-warning" (click)="iniciarSesion()">Iniciar Sesion</button>
+	<button class="btn btn-info" (click)="iniciar_Sesion()">Iniciar Sesion</button>
 </form>

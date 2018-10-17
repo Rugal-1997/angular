@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HTTPClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';  
 
 import { AppComponent } from './app.component';
@@ -20,7 +20,8 @@ const rutas:Routes=[
   {path:'', component: InicioComponent, pathMatch: 'full'},
   {path:'inicio', component: InicioComponent},
   {path:'articulos', component: ArticulosComponent},
-  {path:'iniciar_sesion', component: IniciarSesionComponent},
+  {path:'iniciar-sesion', component: IniciarSesionComponent},
+  {path:'crear-cuenta', component: CrearCuentaComponent},
   {path:'**', redirectTo: '/', pathMatch: 'full'}
 ]; 
 
@@ -38,7 +39,7 @@ const rutas:Routes=[
   imports: [
     BrowserModule,
     RouterModule.forRoot(rutas),
-    HTTPClientModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [
