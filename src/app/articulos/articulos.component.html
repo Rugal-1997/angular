@@ -6,10 +6,10 @@
 		<th></th>
 	</thead>
 	<tbody>
-		<tr>
-			<td>Ejemplo</td>
+		<tr *ngFor="let articulo of articulos">
+			<td><a [routerLink]="['/articulos/'+articulo.id]">{{articulo.titulo}}</a></td>
 			<td><button class="btn btn-success">Editar</button></td>
-			<td><button class="btn btn-danger">Eliminar</button></td>
+			<td><button class="btn btn-danger" (click)="eliminar_Articulo(articulo.id)">Eliminar</button></td>
 		</tr>
 	</tbody>
 </table>

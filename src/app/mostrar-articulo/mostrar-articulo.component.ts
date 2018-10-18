@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticulosService } from '../articulos.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-mostrar-articulo',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MostrarArticuloComponent implements OnInit {
 
-  constructor() { }
+	articulo:any;
 
-  ngOnInit() {
-  }
+	constructor(private servicioArticulos:ArticulosService, private route:ActivatedRoute) {
+		this.articulo={titulo: "",contenido:""};
+	}
 
+	ngOnInit() {
+		this.route.params.subscribe(ruta=>{
+			this.servicioArticulos.mostrarArticulo(ruta.id).subscribe(respuesta=>{
+				this.articulo=respuesta;
+			},error=>{
+				alert('No se pudo traer el articulo');
+			});
+		},errorRuta=>{
+			alert('No se pudo obtener la ruta del articulo');
+		});
+	}
 }

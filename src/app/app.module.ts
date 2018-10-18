@@ -22,6 +22,8 @@ const rutas:Routes=[
   {path:'articulos', component: ArticulosComponent},
   {path:'iniciar-sesion', component: IniciarSesionComponent},
   {path:'crear-cuenta', component: CrearCuentaComponent},
+  {path:'articulos/:id', component: MostrarArticuloComponent},
+  {path:'crear-articulo', component: CrearArticuloComponent},
   {path:'**', redirectTo: '/', pathMatch: 'full'}
 ]; 
 

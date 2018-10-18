@@ -1,3 +1,10 @@
-<p>
-  crear-articulo works!
-</p>
+<h1>Crear Articulo</h1>
+<form>
+	<div class="form-group">
+		<label>Titulo</label><input type="text" name="titulo" class="form-control" [(ngModel)]="articulo.titulo">
+	</div>
+	<div class="form-group">
+		<label>Contenido</label><textarea class="form-control" name="contenido" [(ngModel)]="articulo.contenido"></textarea>
+	</div>
+	<button class="btn btn-info" (click)="crear_Articulo()">Crear Articulo</button>
+</form>

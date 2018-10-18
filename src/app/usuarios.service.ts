@@ -12,9 +12,8 @@ export class UsuariosService {
 
 	constructor(private http:HttpClient) {
 		this.url="https://apidocumentospiensadigital.herokuapp.com";
-		this.encabezados={ headers: new HttpHeaders({
-			'Content-Type': 'Application/json' })
-		}
+		this.encabezados={ headers: new HttpHeaders({'Content-Type': 'Application/json'})
+		};
 	}
 
 	iniciarSesion(usuario:any):Observable<any>{
